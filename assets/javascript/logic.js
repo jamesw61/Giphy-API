@@ -24,12 +24,17 @@ $( document ).ready(function() {
               {
                 for (var j = 0; j <10; j++)
                   {
+                  console.log(response);
+                  var gifContainer = $('<div>')  
                   var newDiv = $('<img>');
+                  gifContainer.html('<h3 class="text-center">Rating:  ' + response.data[j].rating + "</h3>")
+                              .addClass('gifContain');
                   var newURL = response.data[j].images.fixed_height_still.url;
                   newDiv.attr("src", newURL).attr("URLanimate", response.data[j].images.fixed_height.url)
                         .attr("URLstill", newURL)
-                        .css("padding", "10px").addClass("gif");
-                  $('#animals').prepend(newDiv);
+                        .addClass("gif");
+                  gifContainer.prepend(newDiv);
+                  $('#animals').prepend(gifContainer);
                   }
               });
   }
