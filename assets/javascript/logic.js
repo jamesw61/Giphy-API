@@ -26,7 +26,7 @@ $( document ).ready(function() {
                 for (var j = 0; j <10; j++)
                   {
                   console.log(response);
-                  var gifContainer = $('<div>')  
+                  var gifContainer = $('<div>');  
                   var newDiv = $('<img>');
                   gifContainer.html('<h3 class="text-center">Rating:  ' + response.data[j].rating + "</h3>")
                               .addClass('gifContain');
