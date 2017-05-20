@@ -1,10 +1,13 @@
 
 $( document ).ready(function() {
-  animalArray = [];
+
+  var animalArray = ["dog", "cat", "pig"];
   var searchTerm = "";
   var queryURL = "http://api.giphy.com/v1/gifs/search?q=";
   var apiKey = "&api_key=dc6zaTOxFJmzC&limit=10";
   var buttonTitle = "";
+
+ 
 
   function createAnimalButton() 
   {
@@ -26,7 +29,7 @@ $( document ).ready(function() {
                 for (var j = 0; j <10; j++)
                   {
                   console.log(response);
-                  var gifContainer = $('<div>')  
+                  var gifContainer = $('<div>');  
                   var newDiv = $('<img>');
                   gifContainer.html('<h3 class="text-center">Rating:  ' + response.data[j].rating + "</h3>")
                               .addClass('gifContain');
@@ -38,6 +41,11 @@ $( document ).ready(function() {
                   $('#animals').prepend(gifContainer);
                   }
               });
+  }
+
+  for (var i = 0; i < animalArray.length; i++) {
+    searchTerm = animalArray[i];
+    createAnimalButton();
   }
 
   $('#submitButton').on('click', function(){
