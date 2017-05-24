@@ -3,7 +3,7 @@ $( document ).ready(function() {
 
   var animalArray = ["dog", "cat", "pig"];
   var searchTerm = "";
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=";
   var apiKey = "&api_key=dc6zaTOxFJmzC&limit=10";
   var buttonTitle = "";
 
